@@ -1,0 +1,69 @@
+# Example HiCeeBox configuration file
+# This demonstrates all track types and common options
+
+region:
+  chrom: chr6
+  start: 30000000
+  end: 32000000
+
+# Figure settings
+width: 8
+dpi: 300
+title: "Multi-omics View of chr6:30,000,000-32,000,000"
+
+# Track definitions
+tracks:
+  # Hi-C contact heatmap (triangle view)
+  - type: hic_triangle
+    file: data/example.hic
+    resolution: 10000
+    norm: KR
+    cmap: Reds
+    name: Hi-C
+    height: 2.0
+
+  # ATAC-seq signal
+  - type: bigwig
+    file: data/atac.bw
+    name: ATAC-seq
+    color: blue
+    style: fill
+    alpha: 0.7
+    height: 1.0
+
+  # ChIP-seq signal
+  - type: bigwig
+    file: data/h3k27ac.bw
+    name: H3K27ac
+    color: green
+    style: fill
+    alpha: 0.7
+    height: 1.0
+
+  # ChIP-seq peaks
+  - type: bed
+    file: data/peaks.bed
+    name: Peaks
+    color: red
+    alpha: 0.7
+    height: 0.5
+
+  # Chromatin loops
+  - type: bedpe
+    file: data/loops.bedpe
+    name: Loops
+    color: black
+    style: arc
+    alpha: 0.5
+    height: 1.0
+
+  # Gene annotations
+  - type: gene
+    file: data/genes.gtf
+    name: Genes
+    gene_color: darkblue
+    exon_color: blue
+    show_gene_names: true
+    max_rows: 5
+    height: 1.5
+

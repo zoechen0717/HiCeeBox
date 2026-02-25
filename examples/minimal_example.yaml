@@ -1,0 +1,13 @@
+# Minimal HiCeeBox configuration
+# Shows the bare minimum required to generate a plot
+
+region:
+  chrom: chr1
+  start: 1000000
+  end: 2000000
+
+tracks:
+  - type: hic_triangle
+    file: data/example.hic
+    resolution: 10000
+
