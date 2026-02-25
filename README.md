@@ -1,17 +1,15 @@
 # HiCeeBox
 
-Interactive genome browser for Hi-C contact maps and other tracks (BigWig, BED, BEDPE, genes). Use the GUI app or the Python API.
+Interactive genome browser for Hi-C contact maps and other tracks (BigWig, BED, BEDPE, genes). Python API.
 
-**Quick run (GUI):** `pip install -e .` then `hiceebox-gui` (requires PySide6, hic-straw, cooler, pyBigWig for full features).
-
-**macOS app:** See `QUICKSTART_MAC.md` for building a standalone `.app` / DMG. After `./build_macos.sh` you get `HiCeeBox-0.1.0.dmg` to share; recipients only need macOS, no Python.
-
-**Python API:**
+**Install**
 
 ```bash
 pip install -e .
-pip install hic-straw cooler pyBigWig  # for Hi-C and bigwig
+pip install hic-straw cooler pyBigWig   # for Hi-C and bigwig
 ```
+
+**Quick example**
 
 ```python
 from hiceebox.view import GenomeView
@@ -25,8 +23,6 @@ view.add_track(GeneTrack('genes.gtf.gz'))
 view.plot(output='figure.pdf')
 ```
 
-- **Code:** `hiceebox/` (core), `hiceebox_gui/` (GUI)
-- **Examples:** `examples/HiCeeBox_Tutorial.ipynb`, `examples/HiCeeBox_Demo.ipynb`
-- **Build:** `HiCeeBox.spec`, `build_macos.sh` (PyInstaller); optional icon in `assets/` (see `assets/README.md`)
+**Tutorial:** see `examples/HiCeeBox_Tutorial.ipynb` for a walkthrough.
 
-Python 3.10+. License: MIT.
+Python 3.10+. MIT.
