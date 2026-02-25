@@ -76,3 +76,9 @@ examples/data/
 *.svg
 output_*
 
+# Excluded from repo
+TESTING_GUI.md
+setup_py2app.py
+build_macos.sh
+hiceebox_gui/
+
